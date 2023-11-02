@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Listing</title>
+    <style>
+    	th, td {
+ 		border: 2px solid black;
+		padding: 5px;
+		border-collapse: collapse;
+		text-align: left;
+   	}
+	th {
+		background-color: RGB(50, 200, 150)
+	}
+	.product-container {
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+   <body>
+    <h1 style="font-family:Arial">PRODUCT LISTING</h1>
+	</br>
+	<div class="product-container">
+    	<table>
+        	<tr>
+	    	<th>Productid</th>
+            	<th>ProductName</th>
+            	<th>Price</th>
+	    	<th>Photo</th>
+        	</tr>
+        	{% for product, blob_url in final_data %}
+        	<tr>
+			<td>{{ product[0] }}</td>
+            		<td>{{ product[1] }}</td>
+	    		<td>{{ product[2] }}</td>
+	    		<td><img src="{{ blob_url }}" alt="Car's image" width="200" height="150"/></td>
+        	</tr>
+        	{% endfor %}
+    	</table>
+	</div>
+		</br>
+		</br>
+		<form action="/add_product">
+        		<input type="submit" value="Home" style="padding:10px 20px;width:100px;height:50px;
+			background-color:RGB(50, 200, 150);margin-top:20px;margin-left:150px;
+			cursor:pointer">
+    		</form>
+   </body>
+</html>

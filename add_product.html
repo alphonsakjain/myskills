@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Product</title>
+	<style>
+		label {
+			font-family: 'Open Sans';
+			margin-right: 30px;
+		}
+	</style>
+	<script>
+        function add_product_details() {
+            window.location.href = '/add_product';  // Add product details to storage and database
+        }
+
+        function display_page() {
+            window.location.href = '/display_products';  // Redirect to display products page
+        }
+    </script>
+</head>
+<body>
+    <h1 style="font-family:Arial">ADD PRODUCT</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="product_name">Product Name:</label>
+        <input type="text" id="product_name" name="product_name" required><br><br>
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" required><br><br>
+        <label for="photo">Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*" required><br><br><br>
+        <input type="submit" onclick="add_product_details()" value="Add Product" style="background-color:RGB(50, 200, 150)">
+	<input type="submit" onclick="display_page()" value="Display Products" style="background-color:RGB(50, 200, 150);margin-left:40px">
+    </form>
+</body>
+</html>
